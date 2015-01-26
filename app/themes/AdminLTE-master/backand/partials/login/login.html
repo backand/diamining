@@ -15,6 +15,10 @@
                     <div class="form-group">
                         <input type="text" class="form-control input-lg" ng-model="appName" placeholder="Application" required>
                     </div>
+                    <div class="form-group">
+                        <input type="text" name="exToken" class="form-control input-lg" ng-model="exToken" placeholder="External Token" >
+                    </div>
+
                     <div class="">
                         <input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In" ng-show="!waiting">
                         <img class="img-responsive center-block" ng-show="waiting" src="backand/img/ajax-loader.gif" />

@@ -5,7 +5,7 @@
 
         var self = this;
 
-        this.signIn = function (userName, password, appname, successCallback, errorCallback) {
+        this.signIn = function (userName, password, appname,exToken, successCallback, errorCallback) {
             var request = $http({
                 method: 'POST',
                 url: backandGlobal.url + '/token',
@@ -20,7 +20,8 @@
                     grant_type: 'password',
                     username: userName,
                     password: password,
-                    appname: appname
+                    appname: appname,
+                    exToken:exToken
                 }
             });
             request.success(function (data, status, headers, config) {

@@ -9,7 +9,7 @@ angular.module('backAnd.controllers')
     .controller('signInController', ['$scope', 'Global', '$http', '$location', '$rootScope','$route', 'AuthService',
         function ($scope, Global, $http, $location, $rootScope, $route, AuthService) {
             $scope.global = Global;
-
+            $scope.exToken ="moshe";
             function toQueryString(obj) {
                 var parts = [];
                 for (var i in obj) {
@@ -100,7 +100,7 @@ angular.module('backAnd.controllers')
                 $scope.loginError = '';
                 $scope.waiting = true;
 
-                AuthService.signIn($scope.user, $scope.password, $scope.appName,
+                AuthService.signIn($scope.user, $scope.password, $scope.appName,$scope.exToken,
                 function (data, status, headers, config) {
                     localStorage.setItem('Authorization', $http.defaults.headers.common['Authorization']);
                     $http.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization');
